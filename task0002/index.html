@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>起个什么title呢</title>
+    <audio id="bgMusic1">
+        <source src="audio/xx.m4a">
+    </audio>
+    <audio id="bgMusic2">
+        <source src="audio/bw.m4a">
+    </audio>
+    <style>
+        .pic_box{
+            float: left;
+            width: 35%;
+            height:40%;
+            margin-top: 5%;
+            margin-bottom: auto;
+            margin-left: 10%;
+            margin-right: auto;
+            z-index: 2;
+        }
+        @media  screen  and (min-width: 801px){
+            .but_box{
+                float: right;
+                width: 20%;
+                height: 50%;
+                margin-top:20%;
+                margin-right: 10%;
+            }
+            .button{
+                width: 240px;
+                height: 49px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10%;
+                margin-bottom: auto;
+                border: transparent;
+                font-size: larger;
+            }
+        }
+        @media screen and (max-width: 800px){
+            .but_box{
+                width: 100%;
+                height: 50%;
+                margin-top:5%;
+                margin-bottom: 10%;
+                margin-right: auto;
+            }
+            .button{
+                width: 90%;
+                height: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 5%;
+                margin-bottom: auto;
+                color: #ee4956;
+                border: 2px solid #888;
+                border-radius: 5px;
+                font-size: larger;
+            }
+        }
+        .a{
+            cursor: pointer;
+        }
+        body{
+            background-image: url("images/bw-bg.png");
+            background-size: cover;
+            background-repeat: round;
+        }
+        .pic{
+            display: block;
+            width: 435px;
+            height: 532px;
+        }
+        .button_1{
+            background-image: url("images/btn-gray.png");
+            text-align: left;
+            font-size:35px;
+            color:lightblue;
+        }
+        .button_2{
+            background-image: url("images/btn-blue.png");
+            text-align: left;
+            font-size:35px;
+            color:black;
+        }
+    </style>
+</head>
+<body id="_background">
+<div class="pic_box">
+    <img id="picture" src="images/bw.png" class="pic">
+</div>
+<div class="but_box">
+    <input id="xx" type="button" value="  小新" class="button button_1 a">
+    <input id="bw" type="button" value="  巴卫" class="button button_2 a">
+</div>
+</body>
+<script>
+    var img_change=document.getElementById("picture");
+    var but_change=document.getElementsByTagName("input");
+    var background_img=document.getElementById("_background");
+    var audio=document.getElementById("bgMusic1");
+    var audio2=document.getElementById("bgMusic2");
+    for(var i=but_change.length-1;i>=0;i--){
+        but_change[i].onclick=function () {
+            change(this.id);
+            if(this.id=="xx"){
+                audio.play()
+            }else audio2.play()
+
+        }
+    }
+    function  change(id) {
+        img_change.setAttribute("src","images/"+id+".png");
+        background_img.style.backgroundImage="url(images/"+id+"-bg.png)";
+        for(var i=0;i<but_change.length;i++){
+            but_change[i].style.backgroundImage="url(images/btn-gray.png)";
+            but_change[i].style.color="lightblue";
+        }
+        document.getElementById(id).style.backgroundImage="url(images/btn-blue.png)";
+        document.getElementById(id).style.color="black";
+    }
+</script>
+</html>
