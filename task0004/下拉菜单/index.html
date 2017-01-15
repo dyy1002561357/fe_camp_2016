@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉菜单</title>
+    <style>
+        *{
+            font-size:20px;
+            list-style: none;
+            font-family:"Microsoft YaHei UI",sans-serif,"Microsoft Himalaya";
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            position: relative;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav{
+            height:2em;
+            width: 48em;
+            margin: 0 auto;
+            margin-top:1.5em;
+        }
+        nav ul{
+            height: 2em;
+            width: 48em;
+            border-radius: 4px;
+            background-color: #99f;
+        }
+        nav ul li:nth-child(1) ul{
+            height: 6em;
+            width:16em;
+        }
+        nav ul li:nth-child(2) ul{
+            height: 6em;
+            width: 16em;
+        }
+        nav ul li:nth-child(3) ul{
+            height: 6em;
+            width: 16em;
+        }
+        nav ul li{
+            float: left;
+            height: 2em;
+            width: 16em;
+            text-align: center;
+            line-height: 2em;
+        }
+        nav ul ul{
+            display: none;
+        }
+        nav ul li:hover > ul{
+            display: block;
+        }
+        nav ul li:nth-child(1):hover{
+            border-radius: 4px 0 0 0;
+        }
+        nav ul li:nth-child(3):hover{
+            border-radius: 0 4px 0 0;
+        }
+        nav ul li ul:hover{
+            border-radius: 0 0 4px 4px;
+        }
+        a:hover{
+            color:red;
+        }
+
+    </style>
+</head>
+<body>
+   <nav>
+       <ul>
+           <li><a href="#">菜单1</a>
+               <ul>
+                   <li><a href="#">假设有内容</a></li>
+                   <li><a href="#">真不知道写什么</a></li>
+                   <li><a href="#">hello world</a></li>
+               </ul>
+           </li>
+           <li><a href="#">菜单2</a>
+               <ul>
+                   <li><a href="#">烫烫烫烫</a></li>
+                   <li><a href="#">烫烫烫烫烫</a></li>
+                   <li><a href="#">烫烫烫烫烫烫</a></li>
+               </ul>
+           </li>
+           <li><a href="#">菜单3</a>
+               <ul>
+                   <li><a href="#">你进了个假菜单</a></li>
+               </ul>
+           </li>
+       </ul>
+   </nav>
+</body>
+</html>
